@@ -1,0 +1,568 @@
+/*CSS for Dynalist*/
+
+/* Images are shrunk to 250 pixel height thumbnails */
+
+.node-displayed-image {
+    max-width: 100%;
+    max-height: 250px;
+}
+
+/*Make images larger when hovering over  them*/
+.node-displayed-image-link { 
+      z-index: 9999; 
+} 
+
+.node-displayed-image { 
+     max-width: 80px; 
+     max-height: 80px; 
+     vertical-align: 
+     top border-radius: 20px; 
+     transition: all .2s ease-in-out; 
+} 
+
+.node-displayed-image:hover { 
+     max-width: 30%; 
+     max-height: 30%; 
+     transform: scale(3); 
+}
+
+/*CSS to hide default icons:*/
+
+.DocumentItem {
+margin: 1px 0;
+}
+
+.FolderItem-header {
+padding-left: 30px;
+}
+
+.FolderItem .DocumentItem .DocumentItem-header {
+padding-left: 47px;
+}
+
+.DocumentItem-title,
+.FolderItem-title {
+margin-left: 0;
+}
+
+.DocumentItem-icon,
+.FolderItem-icon {
+display: none;
+}
+
+.FolderItem-header {
+padding-left: 30px;
+}
+
+/* checkbox on mobile does not trigger zoom */
+.is-mobile .Node-bullet {
+pointer-events: none;
+}
+ 
+/*Image in notes field is rendered to the right of the text*/
+.Node-renderedNote .node-displayed-image { 
+float:right; max-width: 55%; 
+}
+
+/* Better CSS settings box*/
+.js-update-setting.setting-text-field { height:20em; }
+.setting-left { width: 55%; }
+.setting-right { width: 45%; }
+
+/* show search terms in bold with grey background*/ 
+.search-match {
+  font-style: normal; 
+ font-weight: bold; 
+ background: #666666; 
+ }
+
+ /* Don't show icon for Dynalist links. */
+
+.node-link-internal.is-displayed:before { content: none; 
+}
+
+/*Change specified tags to ⭐️ emojis and place at beginning of line no matter where tag is located*/
+a[title^="Filter #s1"],
+a[title^="Filter #s2"],
+a[title^="Filter #s3"],
+a[title^="Filter #s4"],
+a[title^="Filter #s5"] {
+     float: left;
+     font-size: 0;
+     display: inline-block;
+     margin-right: 10px;
+     white-space: nowrap;
+     text-decoration: none;
+     background: none !important;
+}
+ 
+a[title^="Filter #s1"]:before,
+a[title^="Filter #s2"]:before,
+a[title^="Filter #s3"]:before,
+a[title^="Filter #s4"]:before,
+a[title^="Filter #s5"]:before {
+     font-size: 16px;
+}
+ 
+a[title^="Filter #s1"]:before { content: "⭐️"; }
+a[title^="Filter #s2"]:before { content: "⭐️⭐️"; }
+a[title^="Filter #s3"]:before { content: "⭐️⭐️⭐️"; }
+a[title^="Filter #s4"]:before { content: "⭐️⭐️⭐️⭐️"; }
+a[title^="Filter #s5"]:before { content: "⭐️⭐️⭐️⭐️⭐️"; }
+
+/*Replace ##|Build tag with 🔨Build */
+
+a[title="Filter ##|Build"]::before {
+   visibility: visible;
+   content: "🔨Build";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Build"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Draft tag with ✏️Draft */
+
+a[title="Filter ##|Draft"]::before {
+   visibility: visible;
+   content: "✏️Draft";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Draft"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+
+/*Replace ##|Fell tag with 🪓Fell */
+
+a[title="Filter ##|Fell"]::before {
+   visibility: visible;
+   content: "🪓Fell";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Fell"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Fix tag with 🩹Fix */
+
+a[title="Filter ##|Fix"]::before {
+   visibility: visible;
+   content: "🩹Fix";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Fix"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Paint tag with 🖌️Paint*/
+
+a[title="Filter ##|Paint"]::before {
+   visibility: visible;
+   content: "🖌️Paint";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Paint"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|RD tag with 🔬RD*/
+a[title="Filter ##|RD"]::before {
+   visibility: visible;
+   content: "🔬RD";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|RD"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|QA tag with 🥇QA*/
+
+a[title="Filter ##|QA"]::before {
+   visibility: visible;
+   content: "🥇QA";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|QA"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Pay tag with 💳Pay*/
+
+a[title="Filter ##|Pay"]::before {
+   visibility: visible;
+   content: "💳Pay";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Pay"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Office tag with 💼Office*/
+
+a[title="Filter @@Office"]::before {
+   visibility: visible;
+   content: "💼Office";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Office"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Change @=Project🚧 to 🚧Project and place at beginning of line no matter where tag is located*/
+
+a[title^="Filter @=Project🚧"]{
+     float: left;
+     font-size: 0;
+     display: inline-block;
+     margin-right: 10px;
+     white-space: nowrap;
+     text-decoration: none;
+     background: #333333 !important;
+filter: grayscale(100%);
+}
+ 
+a[title^="Filter @=Project🚧"]:before{
+     font-size: 16px;
+}
+ 
+a[title^="Filter @=Project🚧"]:before { content: "🚧Project"; }
+
+/*Change @=AOR to 🔎 and place at beginning of line no matter where tag is located*/
+
+a[title^="Filter @=AOR"]{
+     float: left;
+     font-size: 0;
+     display: inline-block;
+     margin-right: 10px;
+     white-space: nowrap;
+     text-decoration: none;
+     background: #333333 !important;
+filter: grayscale(100%);
+}
+ 
+a[title^="Filter @=AOR"]:before{
+     font-size: 16px;
+}
+ 
+a[title^="Filter @=AOR"]:before { content: "🔎AOR"; }
+
+
+/*Replace ##|Transfer with ↔️Transfer*/
+
+a[title="Filter ##|Transfer"]::before {
+   visibility: visible;
+   content: "↔️Transfer";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Transfer"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##(Watch with 📺Watch*/
+
+a[title="Filter ##(Watch"]::before {
+   visibility: visible;
+   content: "📺Watch";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##(Watch"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##(Read with 👁️Read*/
+
+a[title="Filter ##(Read"]::before {
+   visibility: visible;
+   content: "👁️Read";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##(Read"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@PC with 💻PC*/
+
+a[title="Filter @@PC"]::before {
+   visibility: visible;
+   content: "💻PC";
+    font-size: 20px !important;
+ background-color: #333333
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@PC"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Home with  🏠Home*/
+
+a[title="Filter @@Home"]::before {
+   visibility: visible;
+   content: "🏠Home";
+    font-size: 20px !important;
+ background-color: #333333
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Home"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Web with  🌐Web*/
+
+a[title="Filter @@Web"]::before {
+   visibility: visible;
+   content: "🌐Web";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Web"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##&Remind with  🔔Remind*/
+
+a[title="Filter ##&Remind"]::before {
+   visibility: visible;
+   content: "🔔Remind";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##&Remind"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Garden with  🌲Garden*/
+
+a[title="Filter @@Garden"]::before {
+   visibility: visible;
+   content: "🌲Garden";
+    font-size: 20px !important;
+ background-color: #333333
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Garden"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##&Ask with  🙋Ask*/
+
+a[title="Filter ##&Ask"]::before {
+   visibility: visible;
+   content: "🙋Ask";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##&Ask"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Digital with  🤖Digital*/
+
+a[title="Filter @@Digital"]::before {
+   visibility: visible;
+   content: "🤖Digital";
+    font-size: 20px !important;
+ background-color: #333333
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Digital"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Reply with  ↩️Reply*/
+
+a[title="Filter ##|Reply"]::before {
+   visibility: visible;
+   content: "↩️Reply";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Reply"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace ##|Reply with  🔎Search*/
+
+a[title="Filter ##|Search"]::before {
+   visibility: visible;
+   content: "🔎Search";
+    font-size: 20px !important;
+ background-color: none
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter ##|Search"] {
+   visibility: hidden;
+   font-size: 0%;
+}
+
+/*Replace @@Phone  📱Phone*/
+
+a[title="Filter @@Phone"]::before {
+   visibility: visible;
+   content: "📱Phone";
+    font-size: 20px !important;
+ background-color: #333333
+ !important;
+ color: white !important;
+     font-weight: normal;
+ text-decoration: none;
+filter: grayscale(100%);
+}
+
+a[title="Filter @@Phone"] {
+   visibility: hidden;
+   font-size: 0%;
+}
